@@ -48,6 +48,19 @@ CREATE TABLE IF NOT EXISTS  order_tbl (
 
 INSERT INTO seata_client.order_tbl (id, user_id, commodity_code, count, money, descs) VALUES (1, 'NO-100001', 'C100000', 100, 10, 'init desc');
 
+DROP TABLE IF EXISTS multi_insert_order_tbl;
+
+CREATE TABLE multi_insert_order_tbl (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  tenant_id int(11) NOT NULL,
+  user_id varchar(255) DEFAULT NULL,
+  commodity_code varchar(255) DEFAULT NULL,
+  count int(11) DEFAULT '0',
+  money int(11) DEFAULT '0',
+  descs varchar(255) DEFAULT '',
+  PRIMARY KEY (id, tenant_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 DROP TABLE IF EXISTS undo_log;
 
 CREATE TABLE undo_log (

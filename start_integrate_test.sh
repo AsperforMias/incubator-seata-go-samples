@@ -17,6 +17,7 @@
 
 # tests
 array+=("integrate_test/at/insert")
+array+=("integrate_test/at/multi_insert")
 array+=("integrate_test/at/insert_on_update")
 array+=("integrate_test/at/select_for_update")
 
